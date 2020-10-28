@@ -372,8 +372,8 @@ nav button:nth-of-type(2) {
     transform: scale(2);
 }
 .round_chart_canvas {
-    height: 90%;
-    width: 90%;
+    height: 80%;
+    width: 80%;
 }
 .round_chart_circle_back {
     fill: none;
@@ -670,7 +670,7 @@ nav button:nth-of-type(2) {
         align-items: flex-start;
     }
     .circles > .circles_wrapper > div {
-        transform: scale(.8);
+        transform: scale(.9);
         width: auto;    
     }
     .circles > .circles_wrapper > div svg {
