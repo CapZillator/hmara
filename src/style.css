@@ -20,18 +20,18 @@ body {
     --chart-press-text-light:#020202;
     --chart-press-light: #162233;
 }
-* {
+.root * {
     scrollbar-width: thin;
     scrollbar-color: var(--main-text-colour) transparent;
 }  
   /* для Chrome/Edge/Safari */
-*::-webkit-scrollbar {
+.root *::-webkit-scrollbar {
     width: 1rem;
 }
-*::-webkit-scrollbar-track {
+.root *::-webkit-scrollbar-track {
     background: transparent;
 }
-*::-webkit-scrollbar-thumb {
+.root *::-webkit-scrollbar-thumb {
     background-color: var(--main-text-colour);
     border-radius: .5rem;
     border: none;
