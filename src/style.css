@@ -11,8 +11,9 @@ body {
     --dark-text-colour:  #999999;
     --button_padding: .25rem .5rem;
     --main-dark-colour: #181a1d;
-    --main-blue-colour: #366ec2;
+    --main-blue-colour: #2657a1;
     --grey-light: rgba(255, 255, 255, .2);
+    --grey-almost-transparent: rgba(0, 0, 0, 0.1);
     --chart-press-colour: #363e49;
     --chart-press-text:#708094; 
     --chart-precip-colour: rgba(255, 255, 255, .3);
@@ -118,7 +119,7 @@ button:focus,
     padding: .2rem;
 }
 .search_result ul li:nth-of-type(even) {
-    background: var(--chart-precip-text);
+    background: var(--grey-almost-transparent);
 }
 .favourites_list {
     margin-bottom: 2rem;
