@@ -104,15 +104,9 @@
         top: -10%;
         opacity: 1;
     }
-    40% {
-        margin-left: -5%;
-    }
-    60% {
-        margin-left: -5%;
-    }
     100% {
         top: 100%;
-        margin-left: 0%;
+        margin-left: 3%;
         opacity: 0.2;
     }
 }
@@ -121,49 +115,33 @@
         top: -10%;
         opacity: 1;
     }
-    40% {
-        margin-left: 5%;
-    }
-    60% {
-        margin-left: 5%;
-    }
     100% {
         top: 100%;
-        margin-left: 0%;
+        margin-left: -3%;
         opacity: 0.2;
     }
 }
 @keyframes snow9 {
     0% {
         top: -10%;
+        margin-left: -10%;
         opacity: 1;
-    }
-    40% {
-        margin-left: -8%;
-    }
-    60% {
-        margin-left: -8%;
     }
     100% {
         top: 100%;
-        margin-left: 0%;
+        margin-left: 10%;
         opacity: 0.2;
     }
 }
 @keyframes snow10 {
     0% {
         top: -10%;
+        margin-left: 10%;
         opacity: 1;
-    }
-    40% {
-        margin-left: 8%;
-    }
-    60% {
-        margin-left: 8%;
     }
     100% {
         top: 100%;
-        margin-left: 0%;
+        margin-left: -10%;
         opacity: 0.2;
     }
 }
