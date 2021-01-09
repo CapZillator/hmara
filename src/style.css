@@ -91,15 +91,21 @@ button:focus,
 }
 .close_button {
     background: url("img/close.svg") no-repeat center center;
-    background-size: 25px 25px;
-    height: 25px;
-    width: 25px;
+    background-size: 1.5rem 1.5rem;
+    height: 1.5rem;
+    width: 1.5rem;
+    cursor: pointer;
 }
-.close_button_2 {
+.close_button_2,
+.del_button {
     background: url("img/close.svg") no-repeat center center;
-    background-size: 20px 20px;
-    height: 20px;
-    width: 20px;
+    background-size: 1.2rem 1.2rem;
+    height: 1.2rem;
+    width: 1.2rem;
+    cursor: pointer;
+}
+.del_button {
+    background: url("img/delIcon.svg") no-repeat center center;
 }
 .searchstring_wrapper {
     display: flex;
@@ -160,14 +166,13 @@ button:focus,
 }  
 /* для Chrome/Edge/Safari */
 .main_wrapper *::-webkit-scrollbar {
-    width: 1rem;
+    width: .3rem;
 }
 .main_wrapper *::-webkit-scrollbar-track {
     background: transparent;
 }
 .main_wrapper *::-webkit-scrollbar-thumb {
     background-color: var(--main-text-colour);
-    border-radius: .5rem;
     border: none;
 }
 .nav_buttons {
@@ -281,7 +286,7 @@ nav button {
     margin-bottom: 1rem;
 }
 nav button:first-of-type {
-    background: url("img/settings.svg") no-repeat center center; 
+    background: url("img/menu.svg") no-repeat center center; 
 }
 nav button:nth-of-type(2) {
     background: url("img/favourite.svg") no-repeat center center;

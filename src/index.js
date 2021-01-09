@@ -131,7 +131,7 @@ function getSnow(intensity = 2){//Возвращает снег
   let prevanimflag = 0;
   snowflake_array = snowflake_array.map((el, i) => {
     let classflag = getRandomInt(6);
-    let delayflag = getRandomInt(8);
+    let delayflag = getRandomInt(16);
     let stepflag = getRandomInt(2);
     let animation = getRandomInt(10);
     let flake;
@@ -173,13 +173,22 @@ function getSnow(intensity = 2){//Возвращает снег
     };
     switch (delayflag){
       case 0: flake = <div key={i} className={class_name} style={{left: step +"%", animationName: `${animation}`}}></div>; break;
-      case 1: flake = <div key={i} className={class_name} style={{left: step + "%", animationDelay: ".5s", animationName: `${animation}`}}></div>; break;
-      case 2: flake = <div key={i} className={class_name} style={{left: step + "%", animationDelay: "1s", animationName: `${animation}`}}></div>; break;
-      case 3: flake = <div key={i} className={class_name} style={{left: step + "%", animationDelay: "1.5s", animationName: `${animation}`}}></div>; break;
-      case 4: flake = <div key={i} className={class_name} style={{left: step + "%", animationDelay: "2s", animationName: `${animation}`}}></div>; break;
-      case 5: flake = <div key={i} className={class_name} style={{left: step + "%", animationDelay: "2.5s", animationName: `${animation}`}}></div>; break;
-      case 6: flake = <div key={i} className={class_name} style={{left: step + "%", animationDelay: "3s", animationName: `${animation}`}}></div>; break;
-      case 7: flake = <div key={i} className={class_name} style={{left: step + "%", animationDelay: "3.5s", animationName: `${animation}`}}></div>; break;
+      case 1: flake = <div key={i} className={class_name} style={{left: step + "%", animationDelay: ".2s", animationName: `${animation}`}}></div>; break;
+      case 2: flake = <div key={i} className={class_name} style={{left: step + "%", animationDelay: ".5s", animationName: `${animation}`}}></div>; break;
+      case 3: flake = <div key={i} className={class_name} style={{left: step + "%", animationDelay: ".7s", animationName: `${animation}`}}></div>; break;
+      case 4: flake = <div key={i} className={class_name} style={{left: step + "%", animationDelay: "1", animationName: `${animation}`}}></div>; break;
+      case 5: flake = <div key={i} className={class_name} style={{left: step + "%", animationDelay: "1.3s", animationName: `${animation}`}}></div>; break;
+      case 6: flake = <div key={i} className={class_name} style={{left: step + "%", animationDelay: "1.5s", animationName: `${animation}`}}></div>; break;
+      case 7: flake = <div key={i} className={class_name} style={{left: step + "%", animationDelay: "1.7s", animationName: `${animation}`}}></div>; break;
+      case 8: flake = <div key={i} className={class_name} style={{left: step + "%", animationDelay: "2s", animationName: `${animation}`}}></div>; break;
+      case 9: flake = <div key={i} className={class_name} style={{left: step + "%", animationDelay: "2.2s", animationName: `${animation}`}}></div>; break;
+      case 10: flake = <div key={i} className={class_name} style={{left: step + "%", animationDelay: "2.5s", animationName: `${animation}`}}></div>; break;
+      case 11: flake = <div key={i} className={class_name} style={{left: step + "%", animationDelay: "2.8s", animationName: `${animation}`}}></div>; break;
+      case 12: flake = <div key={i} className={class_name} style={{left: step + "%", animationDelay: "3s", animationName: `${animation}`}}></div>; break;
+      case 13: flake = <div key={i} className={class_name} style={{left: step + "%", animationDelay: "3.3s", animationName: `${animation}`}}></div>; break;
+      case 14: flake = <div key={i} className={class_name} style={{left: step + "%", animationDelay: "3.5s", animationName: `${animation}`}}></div>; break;
+      case 15: flake = <div key={i} className={class_name} style={{left: step + "%", animationDelay: "3.7s", animationName: `${animation}`}}></div>; break;
+      case 16: flake = <div key={i} className={class_name} style={{left: step + "%", animationDelay: "4s", animationName: `${animation}`}}></div>; break;
       default: flake = <div key={i} className={class_name} style={{left: step +"%",  animationName: `${animation}`}}></div>; 
     };
     return flake;
@@ -401,7 +410,6 @@ function GetSunChart(props){//Инфографика: солнце
   let sun_baseline = `${indent},${sun_baseline_y} ${canvas_w - indent},${sun_baseline_y}`;
   let sun_circle_w = Math.round(canvas_w * 0.2);
   let sun_circle_w2 = Math.round(canvas_w * 0.16);
-  let indent2 = Math.round(indent / 1.5);
   let y_indent = indent * 0.1;
   let y_circle_indent = sun_baseline_y - sun_circle_w * 0.7 - y_indent;
   let sun_circle = `M${indent * 2},${sun_baseline_y - y_indent} C ${indent * 2},${y_circle_indent} ${indent * 2 + sun_circle_w},${y_circle_indent} ${indent * 2 + sun_circle_w},${sun_baseline_y - y_indent}`;
@@ -414,10 +422,10 @@ function GetSunChart(props){//Инфографика: солнце
   let text_sunset = null;
   let text_day_dur = null;
   let polar1 = null;
-  if (props.day_dur === 0) {
+  if (props.day_dur === -1) {
     polar1 = <text x={indent * 2 + sun_circle_w + (canvas_w - sun_circle_w - sun_circle_w2 - indent * 4) / 2} y={sun_baseline_y - indent * 2} className="sunchart_text">{props.cur_lang.description.polar_d}</text>;
   }
-  else if(props.day_dur === -1) {
+  else if(props.day_dur === -2) {
     polar1 = <text x={indent * 2 + sun_circle_w + (canvas_w - sun_circle_w - sun_circle_w2 - indent * 4) / 2} y={sun_baseline_y - indent * 2} className="sunchart_text">{props.cur_lang.description.polar_n}</text>;
   }
   else {
@@ -643,8 +651,10 @@ function GetCurrentSunChart(props){
     day_dur = `${hours}:${checkMinutes(minutes)}`;
   }
   else {
-    if (lat > 0 && polar_date < 4 && polar_date > 9) day_dur = -1;
-    else if (lat < 0 && polar_date > 3 && polar_date < 10) day_dur = -1;
+    if (lat > 0 && (polar_date < 4 || polar_date > 9)) day_dur = -2;
+    else if (lat > 0 && polar_date > 3 && polar_date < 10) day_dur = -1;
+    else if (lat < 0 && polar_date > 3 && polar_date < 10) day_dur = -2;
+    else if (lat < 0 && (polar_date < 4 || polar_date > 9)) day_dur = -1;
   };
   let result = <div className="sunchart_wrapper"><GetSunChart sunrise={sunrise} sunset={sunset} day_dur={day_dur} cur_lang={cur_lang}/></div>;
   return result;
@@ -708,12 +718,14 @@ function GetHourlyForecast(props){//Возвращает почасовой пр
 }
 function GetDailyForecast(props){//Возвращает прогноз по дням
   let temp_unit = (props.units === "metric") ? "C": "F";
+  const lat = props.forecast.lat;
   let wind_speed_units = (props.units === "metric") ? props.cur_lang.wind.units.metric: props.cur_lang.wind.units.imperial;
   let timezone_offset = props.forecast.timezone_offset;
   let current_time = new Date();
   let offset = current_time.getTimezoneOffset() * 60 + timezone_offset;
   let result = props.forecast.daily.map((d, i) => {
       let date = new Date((d.dt + offset) * 1000);
+      const polar_date = date.getMonth();
       let day = props.cur_lang.date.day[date.getDay()];
       if (i === 0) day = props.cur_lang.date.today;
       else if (i === 1) day = props.cur_lang.date.tomorrow;
@@ -724,10 +736,18 @@ function GetDailyForecast(props){//Возвращает прогноз по дн
       sunrise = `${sunrise.getHours()}:${checkMinutes(sunrise.getMinutes())}`;
       let sunset = new Date((d.sunset + offset) * 1000);
       sunset = `${sunset.getHours()}:${checkMinutes(sunset.getMinutes())}`;
-      let day_dur = (d.sunset - d.sunrise);
-      let hours = Math.floor(day_dur / 3600);
-      let minutes = Math.floor((day_dur - (hours * 3600)) / 60);
-      day_dur = `${hours}:${checkMinutes(minutes)}`;
+      let day_dur = d.sunrise ? (d.sunset - d.sunrise): 0;
+      if (day_dur > 0){
+        let hours = Math.floor(day_dur / 3600);
+        let minutes = Math.floor((day_dur - (hours * 3600)) / 60);
+        day_dur = `${hours}:${checkMinutes(minutes)}`;
+      }
+      else {
+        if (lat > 0 && (polar_date < 4 || polar_date > 9)) day_dur = -2;
+        else if (lat > 0 && polar_date > 3 && polar_date < 10) day_dur = -1;
+        else if (lat < 0 && polar_date > 3 && polar_date < 10) day_dur = -2;
+        else if (lat < 0 && (polar_date < 4 || polar_date > 9)) day_dur = -1;
+      }
       day = <p><span className="temp_wrapper">{props.cur_lang.description.day} {convertTemp(d.temp.day)}°{temp_unit}</span> {props.cur_lang.feels_like} {convertTemp(d.feels_like.day)}°{temp_unit}</p>;
       let night = <p><span className="temp_wrapper">{props.cur_lang.description.night} {convertTemp(d.temp.night)}°{temp_unit}</span> {props.cur_lang.feels_like} {convertTemp(d.feels_like.night)}°{temp_unit}</p>;
       let morn = <p><span className="temp_wrapper">{props.cur_lang.description.morning} {convertTemp(d.temp.morn)}°{temp_unit}</span> {props.cur_lang.feels_like} {convertTemp(d.feels_like.morn)}°{temp_unit}</p>;
@@ -890,7 +910,7 @@ class WeatherScreen extends React.Component {
         return 0;
       });
       favourites_list = favourites.map((el, i) => {
-        return <div key={i}><span onClick={this.onSearchResultClick} data-lat={el.lat} data-lon={el.lon} data-name={el.city}>{el.city}</span><button onClick={this.onDelFromFavourites} data-id={i} className="close_button_2"></button></div>;
+        return <div key={i}><span onClick={this.onSearchResultClick} data-lat={el.lat} data-lon={el.lon} data-name={el.city}>{el.city}</span><button onClick={this.onDelFromFavourites} data-id={i} className="del_button"></button></div>;
       });
       favourites_list = <div className="favourites_list"><h4>{cur_lang.description.fav}</h4>{favourites_list}</div>;
     }
